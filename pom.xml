@@ -1,0 +1,54 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zimmerbs</groupId>
+	<artifactId>jacob</artifactId>
+	<packaging>pom</packaging>
+	<version>1.17-M2</version>
+	<name>simple</name>
+	<url>http://www.zimmerbs.com</url>
+
+	<parent>
+		<groupId>com.zimmerbs</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<dependencies/>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>jacob-jar.jar</file>
+									<type>jar</type>
+								</artifact>
+								<artifact>
+									<file>jacob-runtime-x86.dll</file>
+									<type>dll</type>
+									<classifier>x86</classifier>
+								</artifact>
+								<artifact>
+									<file>jacob-runtime-x64.dll</file>
+									<type>dll</type>
+									<classifier>x64</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
